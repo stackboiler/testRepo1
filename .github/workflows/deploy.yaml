@@ -38,7 +38,7 @@ jobs:
           ls -R build/server
 
       - name: Install Wrangler
-        run: npm install -g wrangler
+        run: npm install -g wrangler@4
 
       - name: Publish to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3.1.0
