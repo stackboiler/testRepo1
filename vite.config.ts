@@ -11,4 +11,7 @@ export default defineConfig({
     reactRouter(),
     tsconfigPaths(),
   ],
+  build: {
+    outDir: 'dist', // Ensure the output directory is set to 'dist'
+  },
 });
