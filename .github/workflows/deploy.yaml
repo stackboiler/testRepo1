@@ -27,13 +27,15 @@ jobs:
       - name: Build project
         run: |
           npm run build
-          if [ ! -d "dist" ]; then
-            echo "Error: dist directory was not generated"
+          if [ ! -d "build/client" ] || [ ! -d "build/server" ]; then
+            echo "Error: build directories were not generated"
             exit 1
           fi
 
       - name: Debug Build Output
-        run: ls -R dist
+        run: |
+          ls -R build/client
+          ls -R build/server
 
       - name: Install Wrangler
         run: npm install -g wrangler
@@ -42,3 +44,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3.1.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: build/server
