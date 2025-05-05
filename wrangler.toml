@@ -3,8 +3,8 @@ compatibility_date = "2024-05-05"
 
 account_id = "c60b94e5a148a3a9a676b27963e9e059"
 workers_dev = true
-main = "dist/server/entry.worker.js"
+main = "build/server/index.js" # Update to match the actual entry-point file
 compatibility_flags = [ "nodejs_compat" ]
 
 [site]
-bucket = "./dist/client"
+bucket = "./build/client"
